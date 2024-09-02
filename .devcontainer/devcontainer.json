@@ -1,27 +1,15 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/marcosgomesneto/bun-devcontainers/tree/main/src/basic-bun
 {
-  "name": "Bun",
-  "dockerFile": "Dockerfile",
-  "forwardPorts": [5173],
-  // Configure tool-specific properties.
+  "name": "remix-boilerplate",
+  "dockerComposeFile": ["../compose.yml", "compose.yml"],
+  "service": "remix",
+  "workspaceFolder": "/workspace",
   "customizations": {
-    // Configure properties specific to VS Code.
     "vscode": {
-      // Add the IDs of extensions you want installed when the container is created.
-      "extensions": [
-        "oven.bun-vscode",
-        "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss"
-      ],
-      // Add settings to VS Code.
+      "extensions": ["oven.bun-vscode", "esbenp.prettier-vscode", "bradlc.vscode-tailwindcss"],
       "settings": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": [
-          "source.addMissingImports",
-          "source.fixAll.eslint"
-        ],
+        "editor.codeActionsOnSave": ["source.addMissingImports", "source.fixAll.eslint"],
         "editor.quickSuggestions": {
           "strings": true
         },
@@ -36,8 +24,11 @@
         "explorer.fileNesting.enabled": true,
         "explorer.fileNesting.expand": true,
         "explorer.fileNesting.patterns": {
+          "compose.yml": "Dockerfile",
           "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
-          "vite.config.ts": ".eslint*, postcss.config.js, tailwind.config.ts, tsconfig.json"
+          "vite.config.ts": ".eslint*, postcss.config.js, tailwind.config.ts, tsconfig.json",
+          "*.tsx": "$(capture).stories.tsx $(capture).test.tsx",
+          "*.ts": "$(capture).test.ts"
         }
       }
     }

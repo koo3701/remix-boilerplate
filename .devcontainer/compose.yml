@@ -1,0 +1,5 @@
+services:
+  remix:
+    volumes:
+      - .:/workspace:cached
+    command: sleep infinity
