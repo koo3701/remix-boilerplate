@@ -32,8 +32,8 @@
         "explorer.fileNesting.patterns": {
           "compose.yml": "Dockerfile",
           "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
-          "vite.config.ts": ".eslint*, postcss.config.js, tailwind.config.ts, tsconfig.json",
-          "*.tsx": "$(capture).stories.tsx $(capture).test.tsx",
+          "vite.config.ts": "vite-sb.config.ts, .eslint*, postcss.config.js, tailwind.config.ts, tsconfig.json",
+          "*.tsx": "$(capture).stories.tsx, $(capture).test.tsx",
           "*.ts": "$(capture).test.ts"
         }
       }
