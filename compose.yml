@@ -10,4 +10,4 @@ services:
     working_dir: /workspace
     ports:
       - 5173:5173
-    command: sh -c "bun i && bun run dev"
+    command: sh -c "pnpm i && pnpm run dev"

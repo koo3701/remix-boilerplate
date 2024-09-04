@@ -1,11 +1,8 @@
-FROM oven/bun:debian
+FROM node:22.8-bullseye-slim
 
-# Config Bun
-ENV PATH="~/.bun/bin:${PATH}"
-RUN ln -s /usr/local/bin/bun /usr/local/bin/node
+RUN npm install -g npm@latest
+RUN corepack enable pnpm
 
-# Update packages
-RUN if [ "debian" == "alpine" ] ; then apk update ; else apt-get update ; fi
+RUN apt update && apt upgrade -y && apt install -y git
 
-# Install Git
-RUN if [ "debian" == "alpine" ] ; then apk add git ; else apt-get install -y git ; fi
+USER node
