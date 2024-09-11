@@ -94,7 +94,7 @@ export default tseslint.config(
       '@limegrass/import-alias': eslintPluginImportAlias,
     },
     settings: {
-      'import-x/internal-regex': '^@(/|components|routes)/',
+      'import-x/internal-regex': '^((@(components|routes)?)|~)/',
       'import-x/resolver': {
         node: {
           extensions: ['.ts', '.tsx'],

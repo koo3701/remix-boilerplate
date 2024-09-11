@@ -27,7 +27,8 @@
     "paths": {
       "@routes/*": ["app/routes/*"],
       "@components/*": ["app/components/*"],
-      "@/*": ["app/*"]
+      "@/*": ["app/*"],
+      "~/*": ["*"]
     },
 
     // Vite takes care of building everything, not tsc.
