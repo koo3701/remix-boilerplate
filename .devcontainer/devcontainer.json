@@ -3,6 +3,7 @@
   "dockerComposeFile": ["../compose.yml", "compose.yml"],
   "service": "remix",
   "workspaceFolder": "/workspace",
+  "postCreateCommand": "git config --global --add safe.directory /workspace",
   "customizations": {
     "vscode": {
       "extensions": [
