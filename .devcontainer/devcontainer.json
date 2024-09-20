@@ -7,7 +7,6 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "oven.bun-vscode",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "bradlc.vscode-tailwindcss"
@@ -27,6 +26,11 @@
         ],
         "typescript.tsdk": "./node_modules/typescript/lib",
         "typescript.preferences.importModuleSpecifier": "non-relative",
+
+        "search.exclude": {
+          "**/node_modules": true,
+          "**/.pnpm-store": true
+        },
 
         "explorer.fileNesting.enabled": true,
         "explorer.fileNesting.expand": true,
