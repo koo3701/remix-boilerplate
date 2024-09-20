@@ -13,14 +13,17 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@conform-to/react": "^1.2.2",
     "@remix-run/node": "^2.11.2",
     "@remix-run/react": "^2.11.2",
     "@remix-run/serve": "^2.11.2",
     "clsx": "^2.1.1",
+    "conform-to-valibot": "^1.10.0",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwind-variants": "^0.2.1"
+    "tailwind-variants": "^0.2.1",
+    "valibot": "^0.42.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1",

@@ -1,3 +1,5 @@
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
+
 import { tv } from 'tailwind-variants';
 
 const button = tv({
@@ -24,18 +26,12 @@ const button = tv({
 });
 export type ButtonPropsType = {
   className?: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
-  children: React.ReactNode;
-};
-export default function Button({ className, onClick, disabled, children }: ButtonPropsType) {
+  children: ReactNode;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
+export default function Button({ className, disabled, children, ...param }: ButtonPropsType) {
   return (
-    <button
-      type="button"
-      className={button({ className, disabled })}
-      onClick={onClick}
-      disabled={disabled}
-    >
+    <button className={button({ className, disabled })} disabled={disabled} {...param}>
       {children}
     </button>
   );
