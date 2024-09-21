@@ -94,7 +94,7 @@ export default tseslint.config(
       '@limegrass/import-alias': eslintPluginImportAlias,
     },
     settings: {
-      'import-x/internal-regex': '^((@(components|routes)?)|~)/',
+      'import-x/internal-regex': '^((@(components|routes|lib)?)|~)/',
       'import-x/resolver': {
         node: {
           extensions: ['.ts', '.tsx'],
@@ -107,6 +107,17 @@ export default tseslint.config(
     rules: {
       '@typescript-eslint/prefer-promise-reject-errors': 'off',
       'unused-imports/no-unused-imports': 'error',
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'valibot',
+              message: 'Use @lib/valibot',
+            },
+          ],
+        },
+      ],
       'import-x/order': [
         'error',
         {
@@ -133,6 +144,16 @@ export default tseslint.config(
             },
             {
               pattern: '{react,react-dom/*}',
+              group: 'builtin',
+              position: 'after',
+            },
+            {
+              pattern: '@conform-to/*',
+              group: 'builtin',
+              position: 'after',
+            },
+            {
+              pattern: '{conform-to-valibot,@lib/valibot}',
               group: 'builtin',
               position: 'after',
             },

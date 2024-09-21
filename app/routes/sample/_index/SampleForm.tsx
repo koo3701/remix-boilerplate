@@ -2,8 +2,9 @@ import type { ActionFunctionArgs } from '@remix-run/node';
 import { Form, json, redirect } from '@remix-run/react';
 
 import { getFormProps, getInputProps, useForm } from '@conform-to/react';
+
+import { v } from '@lib/valibot';
 import { parseWithValibot } from 'conform-to-valibot';
-import * as v from 'valibot';
 
 import Button from '@components/elements/Button';
 

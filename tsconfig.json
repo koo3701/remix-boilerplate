@@ -27,6 +27,7 @@
     "paths": {
       "@routes/*": ["app/routes/*"],
       "@components/*": ["app/components/*"],
+      "@lib/*": ["app/lib/*"],
       "@/*": ["app/*"],
       "~/*": ["*"]
     },
