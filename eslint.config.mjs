@@ -94,7 +94,7 @@ export default tseslint.config(
       '@limegrass/import-alias': eslintPluginImportAlias,
     },
     settings: {
-      'import-x/internal-regex': '^((@(components|routes|lib)?)|~)/',
+      'import-x/internal-regex': '^((@(components|routes|hooks|lib)?)|~)/',
       'import-x/resolver': {
         node: {
           extensions: ['.ts', '.tsx'],
@@ -106,7 +106,6 @@ export default tseslint.config(
     },
     rules: {
       '@typescript-eslint/prefer-promise-reject-errors': 'off',
-      'unused-imports/no-unused-imports': 'error',
       'no-restricted-imports': [
         'error',
         {
@@ -181,6 +180,7 @@ export default tseslint.config(
         },
       ],
       '@typescript-eslint/consistent-type-imports': 'error',
+      'unused-imports/no-unused-imports': 'error',
     },
   },
   eslintConfigPrettier

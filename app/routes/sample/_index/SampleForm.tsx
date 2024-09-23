@@ -6,7 +6,7 @@ import { getFormProps, getInputProps, useForm } from '@conform-to/react';
 import { v } from '@lib/valibot';
 import { parseWithValibot } from 'conform-to-valibot';
 
-import Button from '@components/elements/Button';
+import Button from '@components/Elements/Button';
 
 const schema = v.object({
   message: v.nonOptional(v.string(), 'Message is required'),

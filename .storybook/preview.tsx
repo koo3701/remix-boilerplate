@@ -1,6 +1,7 @@
 import { themes } from '@storybook/theming';
 
 import { DocsContainer } from '~/.storybook/DocsContainer';
+import { StoryDecorator } from '~/.storybook/StoryDecorator';
 
 import type { Preview } from '@storybook/react';
 
@@ -24,6 +25,8 @@ export default {
       container: DocsContainer,
     },
   },
+
+  decorators: [StoryDecorator],
 
   tags: ['autodocs'],
 } satisfies Preview;
