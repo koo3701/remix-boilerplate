@@ -68,6 +68,10 @@ export default tseslint.config(
       'import-x/resolver': {
         typescript: {},
       },
+      tailwindcss: {
+        callees: ["clsx", "tv"],
+        cssFiles: ['app/tailwind.css'],
+      }
     },
     // @ts-ignore
     rules: {
