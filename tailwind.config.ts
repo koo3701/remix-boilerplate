@@ -9,12 +9,27 @@ export default {
         background: 'var(--background)',
         foreground: {
           DEFAULT: 'var(--foreground)',
-          sub: 'var(--sub-foreground)',
-          link: 'var(--link-foreground)',
-          button: 'var(--button-foreground)',
+          sub: 'var(--foreground-sub)',
+          link: 'var(--foreground-link)',
+          error: 'var(--foreground-error)',
         },
-        primary: 'var(--primary)',
-        secondary: 'var(--secondary)',
+        primary: {
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
+        },
+        secondary: {
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
+        },
+        disabled: {
+          DEFAULT: 'var(--disabled)',
+          foreground: 'var(--disabled-foreground)',
+        },
+        error: {
+          DEFAULT: 'var(--error)',
+          foreground: 'var(--error-foreground)',
+        },
+        outline: 'var(--outline)',
       },
     },
   },

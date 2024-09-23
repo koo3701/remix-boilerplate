@@ -1,4 +1,5 @@
 import { fn } from '@storybook/test';
+import { MdThumbUp } from 'react-icons/md';
 
 import Button from '@components/Elements/Button';
 
@@ -15,4 +16,26 @@ export default {
   },
 } satisfies Meta<T>;
 
-export const Default: Story = {};
+export const Primary: Story = {
+  args: {
+    color: 'primary',
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    color: 'secondary',
+  },
+};
+
+export const WithIcon: Story = {
+  args: {
+    icon: MdThumbUp,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+};

@@ -7,12 +7,23 @@
     --background: #ffffff;
     --foreground: #1f2937;
 
-    --sub-foreground: #4b5563;
-    --link-foreground: #2563eb;
-    --button-foreground: #ffffff;
+    --foreground-sub: #4b5563;
+    --foreground-link: #2563eb;
+    --foreground-error: #dc2626;
 
     --primary: #1f2937;
+    --primary-foreground: #ffffff;
+
     --secondary: #4b5563;
+    --secondary-foreground: #ffffff;
+
+    --disabled: #d1d5db;
+    --disabled-foreground: #6b7280;
+
+    --error: #dc2626;
+    --error-foreground: #ffffff;
+
+    --outline: #e5e7eb;
   }
 
   :root.dark {
@@ -21,10 +32,21 @@
 
     --sub-foreground: #d1d5db;
     --link-foreground: #60a5fa;
-    --button-foreground: #1f2937;
+    --error-foreground: #ef4444;
 
     --primary: #f9fafb;
+    --primary-foreground: #1f2937;
+
     --secondary: #d1d5db;
+    --secondary-foreground: #1f2937;
+
+    --disabled: #6b7280;
+    --disabled-foreground: #d1d5db;
+
+    --error: #dc2626;
+    --error-foreground: #ffffff;
+
+    --outline: #374151;
   }
 }
 
