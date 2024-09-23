@@ -10,7 +10,8 @@
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "csstools.postcss",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "vitest.explorer"
       ],
       "settings": {
         "editor.formatOnSave": true,
@@ -38,7 +39,7 @@
         "explorer.fileNesting.patterns": {
           "compose.yml": "Dockerfile",
           "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
-          "vite.config.ts": "vite-sb.config.ts, .eslint*, postcss.config.js, tailwind.config.ts, tsconfig.json",
+          "vite.config.ts": "vite-sb.config.ts, vitest.config.ts, setup-test-env.ts, .eslint*, postcss.config.js, tailwind.config.ts, tsconfig.json",
           "*.tsx": "$(capture).stories.tsx, $(capture).test.tsx",
           "*.ts": "$(capture).test.ts"
         }

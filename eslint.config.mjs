@@ -15,13 +15,14 @@ import eslintPluginTailwindcss from 'eslint-plugin-tailwindcss';
 import eslintPluginImportX from 'eslint-plugin-import-x';
 import eslintPluginUnusedImports from 'eslint-plugin-unused-imports';
 import eslintPluginImportAlias from '@limegrass/eslint-plugin-import-alias';
+import vitest from "@vitest/eslint-plugin";
 import eslintConfigPrettier from 'eslint-config-prettier';
 
 const compat = new FlatCompat();
 
 export default tseslint.config(
   {
-    ignores: ['node_modules', '.cache', 'build', '.env'],
+    ignores: ['node_modules', '.pnpm-store', '.cache', 'build', '.env'],
   },
   {
     languageOptions: {
@@ -183,6 +184,27 @@ export default tseslint.config(
       ],
       '@typescript-eslint/consistent-type-imports': 'error',
       'unused-imports/no-unused-imports': 'error',
+    },
+  },
+
+  // Testing
+  {
+    files: ['**/*.test.{js,jsx,ts,tsx}'],
+    plugins: {
+      vitest,
+    },
+    rules: {
+      ...vitest.configs.recommended.rules,
+    },
+    settings: {
+      vitest: {
+        typecheck: true
+      }
+    },
+    languageOptions: {
+      globals: {
+        ...vitest.environments.env.globals,
+      },
     },
   },
   eslintConfigPrettier

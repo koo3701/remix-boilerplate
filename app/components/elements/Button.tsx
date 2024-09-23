@@ -50,7 +50,7 @@ export default function Button({
       disabled={disabled}
       {...param}
     >
-      {Icon && <Icon className="mr-1" />}
+      {Icon && <Icon data-testid="icon" className="mr-1" />}
       {children}
     </button>
   );
