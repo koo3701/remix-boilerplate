@@ -11,6 +11,7 @@ export default {
           DEFAULT: 'var(--foreground)',
           sub: 'var(--foreground-sub)',
           link: 'var(--foreground-link)',
+          visited: 'var(--foreground-visited)',
           error: 'var(--foreground-error)',
         },
         primary: {

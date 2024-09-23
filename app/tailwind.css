@@ -8,7 +8,8 @@
     --foreground: #1f2937;
 
     --foreground-sub: #4b5563;
-    --foreground-link: #2563eb;
+    --foreground-link: #1d4ed8;
+    --foreground-visited: #581c87;
     --foreground-error: #dc2626;
 
     --primary: #1f2937;
@@ -30,9 +31,10 @@
     --background: #1f2937;
     --foreground: #f9fafb;
 
-    --sub-foreground: #d1d5db;
-    --link-foreground: #60a5fa;
-    --error-foreground: #ef4444;
+    --foreground-sub: #d1d5db;
+    --foreground-link: #60a5fa;
+    --foreground-visited: #8b5cf6;
+    --foreground-error: #ef4444;
 
     --primary: #f9fafb;
     --primary-foreground: #1f2937;
@@ -52,6 +54,6 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }

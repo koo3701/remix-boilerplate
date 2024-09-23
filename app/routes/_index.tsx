@@ -7,12 +7,12 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="p-4 font-sans">
+    <div className="p-4">
       <h1 className="text-3xl">Welcome to Remix</h1>
       <ul className="mt-4 list-disc space-y-2 pl-6">
         <li>
           <a
-            className="text-blue-700 underline visited:text-purple-900"
+            className="text-foreground-link underline visited:text-foreground-visited"
             target="_blank"
             href="https://remix.run/start/quickstart"
             rel="noreferrer"
@@ -22,7 +22,7 @@ export default function Index() {
         </li>
         <li>
           <a
-            className="text-blue-700 underline visited:text-purple-900"
+            className="text-foreground-link underline visited:text-foreground-visited"
             target="_blank"
             href="https://remix.run/start/tutorial"
             rel="noreferrer"
@@ -32,7 +32,7 @@ export default function Index() {
         </li>
         <li>
           <a
-            className="text-blue-700 underline visited:text-purple-900"
+            className="text-foreground-link underline visited:text-foreground-visited"
             target="_blank"
             href="https://remix.run/docs"
             rel="noreferrer"
@@ -41,7 +41,10 @@ export default function Index() {
           </a>
         </li>
         <li>
-          <Link className="text-blue-700 underline visited:text-purple-900" to="/sample">
+          <Link
+            className="text-foreground-link underline visited:text-foreground-visited"
+            to="/sample"
+          >
             Sample Page
           </Link>
         </li>
