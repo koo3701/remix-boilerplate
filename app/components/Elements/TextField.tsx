@@ -4,6 +4,7 @@ import { tv } from 'tailwind-variants';
 
 const input = tv({
   base: [
+    'm-px',
     'px-3 py-2',
     'bg-primary',
     'text-base font-medium text-primary-foreground',
@@ -22,7 +23,7 @@ const input = tv({
       ],
     },
     error: {
-      true: ['border-2 border-error', 'hover:border-error', 'focus:border-error'],
+      true: ['m-0 border-2 border-error', 'hover:border-error', 'focus:border-error'],
     },
   },
 });
