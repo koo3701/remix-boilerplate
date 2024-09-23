@@ -22,6 +22,8 @@ const compat = new FlatCompat();
 export default tseslint.config(
   {
     ignores: ['node_modules', '.cache', 'build', '.env'],
+  },
+  {
     languageOptions: {
       parserOptions: {
         ecmaVersion: 'latest',
