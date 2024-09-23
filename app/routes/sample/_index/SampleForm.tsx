@@ -1,10 +1,12 @@
 import type { ActionFunctionArgs } from '@remix-run/node';
-import { Form, redirect, useActionData } from '@remix-run/react';
+import { Form, Link, redirect, useActionData } from '@remix-run/react';
 
 import { FormProvider, getFormProps, useForm } from '@conform-to/react';
 
 import { v } from '@lib/valibot';
 import { parseWithValibot } from 'conform-to-valibot';
+
+import { MdArrowBackIos } from 'react-icons/md';
 
 import Button from '@components/Elements/Button';
 import TextField from '@components/Elements/TextField';
@@ -43,11 +45,16 @@ export default function SampleForm() {
       <Form method="post" className="flex flex-col gap-2" {...getFormProps(form)}>
         <TextField type="text" className="w-96" name={message1.name} label="Message1" />
         <TextField type="text" className="w-96" name={message2.name} label="Message2" />
-        <div className="flex justify-end gap-2">
-          <Button type="reset" color="secondary" disabled={!form.dirty}>
-            Reset
-          </Button>
-          <Button type="submit">Submit</Button>
+        <div className="flex justify-between">
+          <Link to="/">
+            <Button icon={MdArrowBackIos}>Back</Button>
+          </Link>
+          <div className="flex gap-2">
+            <Button type="reset" color="secondary" disabled={!form.dirty}>
+              Reset
+            </Button>
+            <Button type="submit">Submit</Button>
+          </div>
         </div>
       </Form>
     </FormProvider>
