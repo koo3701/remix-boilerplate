@@ -42,12 +42,17 @@ export default function TextField({ className, type, name, label, disabled }: Te
     <div className="flex flex-col">
       <label htmlFor={meta.id}>{label}</label>
       <input
+        data-testid={`textfield-input-${name}`}
         className={input({ className, disabled, error: !!meta.errors })}
         disabled={disabled}
         {...getInputProps(meta, { type })}
       />
       <div className="h-6">
-        {meta.errors && <p className="text-foreground-error">{meta.errors[0]}</p>}
+        {meta.errors && (
+          <p data-testid={`textfield-error-${name}`} className="text-foreground-error">
+            {meta.errors[0]}
+          </p>
+        )}
       </div>
     </div>
   );

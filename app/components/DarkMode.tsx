@@ -9,11 +9,11 @@ export type DarkModePropsType = {
 export default function DarkMode({ className }: DarkModePropsType) {
   const { isDarkMode, toggle } = useDarkMode();
   return (
-    <button className={className} onClick={toggle}>
+    <button className={className} onClick={toggle} aria-label="dark mode toggle">
       {isDarkMode ? (
-        <MdLightMode className="size-8 text-primary" />
+        <MdLightMode data-testid="light-mode-icon" className="size-8 text-primary" />
       ) : (
-        <MdOutlineDarkMode className="size-8 text-primary" />
+        <MdOutlineDarkMode data-testid="dark-mode-icon" className="size-8 text-primary" />
       )}
     </button>
   );
