@@ -32,7 +32,8 @@
 
         "search.exclude": {
           "**/node_modules": true,
-          "**/.pnpm-store": true
+          "**/.pnpm-store": true,
+          "**/build": true
         },
 
         "explorer.fileNesting.enabled": true,
