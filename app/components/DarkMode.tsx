@@ -1,13 +1,13 @@
 import { MdLightMode, MdOutlineDarkMode } from 'react-icons/md';
 
-import { useDarkMode } from '@hooks/useDarkMode';
+import { useTheme } from '@context/ThemeContext';
 
 export type DarkModePropsType = {
   className?: string;
 };
 
 export default function DarkMode({ className }: DarkModePropsType) {
-  const { isDarkMode, toggle } = useDarkMode();
+  const { isDarkMode, toggle } = useTheme();
   return (
     <button className={className} onClick={toggle} aria-label="dark mode toggle">
       {isDarkMode ? (

@@ -29,6 +29,7 @@
       "@components/*": ["app/components/*"],
       "@hooks/*": ["app/hooks/*"],
       "@lib/*": ["app/lib/*"],
+      "@context/*": ["app/context/*"],
       "@/*": ["app/*"],
       "~/*": ["*"]
     },

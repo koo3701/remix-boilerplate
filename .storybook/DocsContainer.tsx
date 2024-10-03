@@ -6,14 +6,11 @@ import { addons } from '@storybook/preview-api';
 import { themes } from '@storybook/theming';
 import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
 
-import { useDarkMode } from '@hooks/useDarkMode';
-
 import type { DocsContainerProps } from '@storybook/blocks';
 
 const channel = addons.getChannel();
 
 export const DocsContainer: FC<PropsWithChildren<DocsContainerProps>> = ({ children, context }) => {
-  const { enable, disable } = useDarkMode();
   const [isDark, setDark] = useState(false);
 
   useEffect(() => {
@@ -25,23 +22,19 @@ export const DocsContainer: FC<PropsWithChildren<DocsContainerProps>> = ({ child
     }
   }, []);
 
-  const setLocalStorage = useCallback(
-    (isDark: boolean) => {
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      if (isDark) {
-        enable();
-      } else {
-        disable();
-      }
-      setDark(isDark);
-    },
-    [disable, enable]
-  );
+  const setTheme = useCallback((isDark: boolean) => {
+    setDark(isDark);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
 
   useEffect(() => {
-    channel.on(DARK_MODE_EVENT_NAME, setLocalStorage);
-    return () => channel.off(DARK_MODE_EVENT_NAME, setLocalStorage);
-  }, [setLocalStorage]);
+    channel.on(DARK_MODE_EVENT_NAME, setTheme);
+    return () => channel.off(DARK_MODE_EVENT_NAME, setTheme);
+  }, [setTheme]);
 
   return (
     <BaseContainer theme={isDark ? themes.dark : themes.light} context={context}>

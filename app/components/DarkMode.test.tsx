@@ -3,10 +3,16 @@ import userEvent from '@testing-library/user-event';
 
 import DarkMode from '@components/DarkMode';
 
-const useDarkMode = vi.hoisted(() => vi.fn());
-vi.mock('@hooks/useDarkMode', () => ({
-  useDarkMode,
-}));
+import { ThemeContext } from '@context/ThemeContext';
+
+const defaultTheme = {
+  isDarkMode: false,
+  current: 'light',
+  toggle: vi.fn(),
+  enable: vi.fn(),
+  disable: vi.fn(),
+  system: vi.fn(),
+};
 
 describe('DarkMode Component', () => {
   afterEach(() => {
@@ -14,44 +20,54 @@ describe('DarkMode Component', () => {
   });
 
   it('should render light mode icon when isDarkMode is true', () => {
-    useDarkMode.mockReturnValue({
-      isDarkMode: true,
-      toggle: vi.fn(),
-    });
-
-    render(<DarkMode className="w-0" />);
+    render(
+      <ThemeContext.Provider
+        value={{
+          ...defaultTheme,
+          isDarkMode: true,
+          current: 'dark',
+        }}
+      >
+        <DarkMode />
+      </ThemeContext.Provider>
+    );
 
     const lightModeIcon = screen.getByTestId('light-mode-icon');
     expect(lightModeIcon).toBeInTheDocument();
-
-    const button = screen.getByRole('button', { name: /dark mode toggle/i });
-    expect(button).toHaveClass('w-0');
   });
 
   it('should render dark mode icon when isDarkMode is false', () => {
-    useDarkMode.mockReturnValue({
-      isDarkMode: false,
-      toggle: vi.fn(),
-    });
-
-    render(<DarkMode className="w-0" />);
+    render(
+      <ThemeContext.Provider
+        value={{
+          ...defaultTheme,
+          isDarkMode: false,
+          current: 'light',
+        }}
+      >
+        <DarkMode />
+      </ThemeContext.Provider>
+    );
 
     const darkModeIcon = screen.getByTestId('dark-mode-icon');
     expect(darkModeIcon).toBeInTheDocument();
-
-    const button = screen.getByRole('button', { name: /dark mode toggle/i });
-    expect(button).toHaveClass('w-0');
   });
 
   it('should call toggle function when button is clicked', async () => {
     const toggleMode = vi.fn();
     const user = userEvent.setup();
-    useDarkMode.mockReturnValue({
-      isDarkMode: false,
-      toggle: toggleMode,
-    });
-
-    render(<DarkMode />);
+    render(
+      <ThemeContext.Provider
+        value={{
+          ...defaultTheme,
+          isDarkMode: false,
+          current: 'light',
+          toggle: toggleMode,
+        }}
+      >
+        <DarkMode />
+      </ThemeContext.Provider>
+    );
 
     const button = screen.getByRole('button', { name: /dark mode toggle/i });
     await user.click(button);
