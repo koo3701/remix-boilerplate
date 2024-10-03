@@ -11,7 +11,8 @@
         "esbenp.prettier-vscode",
         "csstools.postcss",
         "bradlc.vscode-tailwindcss",
-        "vitest.explorer"
+        "vitest.explorer",
+        "kimuson.ts-type-expand"
       ],
       "settings": {
         "editor.formatOnSave": true,
